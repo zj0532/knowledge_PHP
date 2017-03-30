@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Amaze UI</title>
+  <title>知识库</title>
 
   <!-- Set render engine for 360 browser -->
   <meta name="renderer" content="webkit">
@@ -36,13 +36,13 @@
   
    
 </head>
-<body id="BeiJing">
+<body id="BeiJing" onkeydown="keyLogin();">
 <div action="" class="am-form" id="form-with-tooltip">
 	<fieldset>
 		<legend id="WenZi">知识库</legend>
 		<div class="am-form-group">
 			<label for="doc-vld-name-2-0">用户名</label>
-			<input type="text" id="doc-vld-name-2-0" minlength="2" placeholder="账号与OA同步" required  />
+			<input type="text" id="doc-vld-name-2-0"  minlength="2" placeholder="账号与OA同步" required  />
 		</div>
 		
 		<div class="am-form-group">
@@ -66,7 +66,6 @@
 <![endif]-->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
-
 <script src="assets/js/index.js"></script>
 </body>
 </html>

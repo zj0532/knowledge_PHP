@@ -22,10 +22,14 @@ $(function(){
 			$tooltip.hide();
 		}
 	});
+	
+	
+
 });
 
 $(document).ready(function () {
-       $('#from').click(function () {
+
+        $('#from').click(function () {
         if ($("input[name='user']").val() == "") {
             alert("用户名不能为空");
             return false;
@@ -41,8 +45,8 @@ $(document).ready(function () {
                 type: "post",
                 url: "ajax/index.php",
                 async: false,
-                data: { user: $("input[name='doc-vld-name-2-0']").val(),
-                    	pass: $("input[name='doc-vld-pwd-1-0']").val(),
+                data: { user: $("input[id='doc-vld-name-2-0']").val(),
+                    	pass: $("input[id='doc-vld-pwd-1-0']").val(),
                 },
                 success: function (data, status) {
                     var types = data;
@@ -61,3 +65,8 @@ $(document).ready(function () {
         }
     });
 });
+
+function keyLogin(){
+ 		if (event.keyCode==13)  //回车键的键值为13
+   		document.getElementById("from").click(); //调用登录按钮的登录事件
+}
