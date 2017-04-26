@@ -15,16 +15,20 @@
 <div id='tb'>
 	<label>姓名：</label><input type="text"><br> <br>
     <a href="#" class="dialog-button" data-options="iconCls:'icon-edit',plain:true" onClick="add()" >添加</a>
-    <a href="#" class="dialog-button" data-options="iconCls:'icon-edit',plain:true" >删除</a>
+    <a href="#" class="dialog-button" data-options="iconCls:'icon-edit',plain:true" onClick="del()" >删除</a>
     <a href="#" class="dialog-button" data-options="iconCls:'icon-edit',plain:true" >修改</a>
     <a href="#" class="dialog-button" data-options="iconCls:'icon-edit',plain:true" >查询</a>
-    <div id="dlg" class="easyui-dialog" style="width:800px;height:400px;padding:10px 20px"
-		closed="true" buttons="#dlg-buttons">
-	<div class="ftitle"></div>
+</div>
+    <div id="dlg" class="easyui-dialog" style="padding:10px 20px" closed="true" buttons="#dlg-buttons">
 	<form id="fm" method="post">
-		<div>
+        <div>
 		  <label>姓名：</label>
-          <input name="name">
+          <input class="easyui-validatebox" name="name" required="true">
+        <div>
+        <br>
+        <div>
+		  <label>密码：</label>
+          <input name="uspwd" class="easyui-validatebox" required="true">
         <div>
         <br>
 		<div>
@@ -39,48 +43,24 @@
         <br>
         <div>
         	 <label>职位：</label>
-      		<input id='cc' name="cc" value="aa">
+      		<input id='job' name="job" >
 		</div>
         <br>
         <div>
 			<label>区域：</label>
  			<input id="business" name="business">
-		</div>
-        <br>
-        <div class="fitem">
-        	<div style="line-height:50px; width:50px; float:left">
-			<label>选项D:</label>
-             </div>
-            <textarea id="Subject_D" name="Subject_D" class="validatebox" style="width:600px; height:50px; resize:none">
-            </textarea>
-		</div>
-        <br>
-        <div class="fitem">
-			<label>答&nbsp;&nbsp;案:</label>&nbsp;&nbsp;                   
-           		<input id="Subject_Answer" name='Subject_Answer'>
-           		<div id='food'>
-           			<input  name='test'  type="checkbox" value="A"><span>A</span><br>
-           			<input  name='test'  type="checkbox" value="B"><span>B</span><br>
-           			<input  name='test'  type="checkbox" value="C"><span>C</span><br>
-           			<input  name='test'  type="checkbox" value="D"><span>D</span><br>
-           		</div>
-           		
-		</div>
+		</div>   		
         <div id="dlg-buttons">
-			<a href="#" class="easyui-linkbutton"  onclick="saveUser()">保存</a>
+			<a href="#" class="easyui-linkbutton"  onclick="save()">保存</a>
 			<a href="#" class="easyui-linkbutton"  onclick="javascript:$('#dlg').dialog('close')">
     			取消</a>
+        </form>
 	   </div>
-    <br><br>
-</div>      
-
-
-  </div>
+     
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/amazeui.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="../knowledge/assets/js/jquery.easyui.min.js"></script>
   <script src="../knowledge/assets/js/YongHuLieBiao.js"></script>
-</h3>
 </body>
 </html>
