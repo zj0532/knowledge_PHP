@@ -6,12 +6,12 @@ $(function(){
 	singleSelect:true,
 	pagination:true,
 	columns:[[
-		{field:'UsID',title:'序号'},
-		{field:'UsName',title:'姓名'},
-		{field:'Phone',title:'手机'},
-		{field:'Email',title:'邮箱'},
-		{field:'JobID',title:'职位'},
-		{field:'BusinessID',title:'区域'}
+		{field:'usid',title:'序号'},
+		{field:'usname',title:'姓名'},
+		{field:'phone',title:'手机'},
+		{field:'email',title:'邮箱'},
+		{field:'JobName',title:'职位'},
+		{field:'BusinessName',title:'区域'}
 	]]
 	})
 
@@ -35,15 +35,17 @@ function add(){
 	$('#dlg').dialog('open').dialog('setTitle','添加新人员');
 	$('#fm').form('clear');
 	url = 'YongHuGameLi/YongHuLieBiao_Save.php';
-    $('#job').combobox('select',1);
+    $('#job').combobox('select',4);
 	$('#business').combobox('select', 5);
 	}
 
 function save(){
+	
 	$('#fm').form('submit',{
 		url:url,
 		onSubmit: function(){
 			return $(this).form('validate');
+			
 		},
 		success: function(result){
 			var result = eval('('+result+')');
@@ -54,7 +56,7 @@ function save(){
 				});
 			} else {
 				$('#dlg').dialog('close');		// close the dialog
-				$('#dg').datagrid('reload');	// reload the user data
+				$('#table_list').datagrid('reload');	// reload the user data
 			}
 		}
 	});
@@ -63,11 +65,12 @@ function save(){
 function del(){
 	var row = $('#table_list').datagrid('getSelected');
 	if (row){
+		console.log(row);
 		$.messager.confirm('删除','确定删除此题吗？',function(r){
 			if (r){
-				$.post('Choose_Edit/Choose_Delete.php',{Subject_ID:row['Subject_ID']},function(result){
+				$.post('YongHuGameLi/YongHuLieBiao_del.php',{usid:row['usid']},function(result){
 					if (result.success){
-						$('#dg').datagrid('reload');	// reload the user data
+						$('#table_list').datagrid('reload');	// reload the user data
 					} else {
 						$.messager.show({	// show error message
 							title: 'Error',
@@ -79,3 +82,14 @@ function del(){
 		});
 	}
 	}
+	
+function edit(){
+			var row = $('#table_list').datagrid('getSelected');
+			if (row){
+				$('#dlg').dialog('open').dialog('setTitle','修改');
+				$('#fm').form('load',row);
+				console.log(row);
+				url = 'YongHuGameLi/YongHuLieBiao_edit.php?UsID='+row.usid+'';
+				
+			}
+		}

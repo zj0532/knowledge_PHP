@@ -1,9 +1,9 @@
 <?php
 
-$Subject_ID = intval($_REQUEST['Subject_ID']);
+$usid = intval($_REQUEST['usid']);
 
-//include('../config.php');
-$sql = "delete from desktop_subjeck where Subject_ID='$Subject_ID'";
+include('../config/config.php');
+$sql = "delete from userinfo where UsID='$usid'";
 $result = mysqli_query($conn,$sql);
 if ($result){
 	echo json_encode(array('success'=>true));

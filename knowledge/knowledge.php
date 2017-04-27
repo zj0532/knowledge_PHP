@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>用户列表</title>
+  <title>知识库列表</title>
   <link rel="stylesheet" type="text/css" href="../knowledge/assets/css/easyui.css">
   <link rel="stylesheet" type="text/css" href="../knowledge/assets/css/icon.css">
 </head>
@@ -57,6 +57,6 @@
   <script src="assets/js/amazeui.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="../knowledge/assets/js/jquery.easyui.min.js"></script>
-  <script src="../knowledge/assets/js/YongHuLieBiao.js"></script>
+  <script src="../knowledge/assets/js/knowledge.js"></script>
 </body>
 </html>

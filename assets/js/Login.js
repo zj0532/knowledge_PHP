@@ -10,3 +10,7 @@ function ZiLiao(){
 function user_list(){
 	$(".admin-content-body").load("YongHuGameLi/YongHuLieBiao.php");
 	}
+
+function knowledge(){
+	$(".admin-content-body").load("knowledge/knowledge.php");
+}

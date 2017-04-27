@@ -68,7 +68,7 @@
         </li>
         <li><a class="am-cf" data-am-collapse="{target: '#collapse-b'}"><span class="am-icon-table"></span> 知识库管理</a></li>
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-b">
-            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 知识库列表</a></li>
+            <li><a href="#" onClick="knowledge()" class="am-cf"><span class="am-icon-check"></span> 知识库列表</a></li>
             <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 我的知识库</a></li>
             <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 知识库审核</a></li>
           </ul>
